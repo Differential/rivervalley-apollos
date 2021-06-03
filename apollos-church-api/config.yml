@@ -144,7 +144,6 @@ TABS:
             - 34
             - 36
       type: VerticalCardList
-      isFeatured: true
     - algorithms:
       - type: CONTENT_FEED
         arguments:

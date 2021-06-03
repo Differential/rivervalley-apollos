@@ -1,7 +1,5 @@
-import {
-  DefaultCard,
-  FeaturedCard,
-} from '@apollosproject/ui-kit';
+import React from 'react';
+import { DefaultCard, FeaturedCard } from '@apollosproject/ui-kit';
 
 // import styleOverrides from './styleOverrides';
 // import propOverrides from './propOverrides';
@@ -63,15 +61,14 @@ const colors = {
 
 const cardMapper = (props) => {
   if (props.isFeatured) {
-   return <FeaturedCard {...props} />;
+    return <FeaturedCard {...props} />;
   }
- return <DefaultCard {...props} />;
+  return <DefaultCard {...props} />;
 };
 
 const overrides = {
   'ui-connected.ContentCardConnected.ContentCardComponentMapper': () => () => ({
     Component: cardMapper,
-  },
+  }),
 };
-
 export default { colors, overrides };
