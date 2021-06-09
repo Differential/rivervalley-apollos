@@ -150,7 +150,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.differential.apollos"
+        applicationId "com.subsplash.thechurchapp.s_8DDN2T"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

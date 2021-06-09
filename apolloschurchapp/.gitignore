@@ -154,7 +154,7 @@ fastlane/report.xml
 
 # Google Play authentication key
 key.json
-*.keystore
+*.jks
 
 # shared secrets
 .env.shared
