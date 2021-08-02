@@ -17,8 +17,6 @@ import {
   Followings,
   Interactions,
   RockConstants,
-  ContentItem,
-  ContentChannel,
   Sharable,
   Auth,
   PersonalDevice,
@@ -43,6 +41,12 @@ import {
   Follow,
   Campus as PostgresCampus,
   Person as PostgresPerson,
+  Media as PostgresMedia,
+  Feature as PostgresFeature,
+  Tag,
+  ContentItem,
+  ContentItemsConnection,
+  ContentItemCategory as ContentChannel,
 } from '@apollosproject/data-connector-postgres';
 
 import * as HopeStream from './HopeStream';
@@ -61,6 +65,10 @@ const data = {
   RockPerson, // This entry needs to come before (postgres) Person
   BinaryFiles, // This entry needs to come before (postgres) Person
   PostgresPerson, // Postgres person for now, as we extend this dataSource in the 'rockWithPostgres' file
+  PostgresMedia,
+  PostgresFeature,
+  Tag,
+  ContentItemsConnection,
   Cloudinary,
   Auth,
   AuthSms,

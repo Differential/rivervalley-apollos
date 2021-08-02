@@ -1,4 +1,4 @@
-import { ActionAlgorithm } from '@apollosproject/data-connector-rock';
+import { ActionAlgorithm } from '@apollosproject/data-connector-postgres';
 
 class dataSource extends ActionAlgorithm.dataSource {
   ACTION_ALGORITHMS = {
