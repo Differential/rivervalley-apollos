@@ -27,7 +27,6 @@ import {
   BinaryFiles,
   Feature,
   FeatureFeed,
-  // ActionAlgorithm,
   Event,
   PrayerRequest,
   Persona,
