@@ -138,7 +138,7 @@ TABS:
         title: 'All messages'
         relatedNode:
           __typename: ContentChannel
-          id: 8aa1c855-82dc-44a1-bf22-8dd47aff9156
+          apollosId: ContentChannel8aa1c855-82dc-44a1-bf22-8dd47aff9156
     - algorithms:
       - type: CONTENT_FEED
         arguments:
