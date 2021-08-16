@@ -213,10 +213,10 @@
     passkit-generator "1.5.9"
     qrcode "^1.3.3"
 
-"@apollosproject/data-connector-postgres@^2.29.4-canary.12":
-  version "2.29.4-canary.12"
-  resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-postgres/-/data-connector-postgres-2.29.4-canary.12.tgz#4823b67f4d970bafedf6c77609e00bfc88cf2c53"
-  integrity sha512-PcK/96vEIMLJKXmLGXwYGKlZeU3wWHDwBZ8Lh3xfE0oo/BMHdxVEnVv8GLHhK0hI3MC8Vgy59bWxhukZdfHllg==
+"@apollosproject/data-connector-postgres@^2.29.4-canary.13":
+  version "2.29.4-canary.13"
+  resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-postgres/-/data-connector-postgres-2.29.4-canary.13.tgz#744824d94bb44b16184881bc5f69bf947c1e22b6"
+  integrity sha512-QRnHrtjO6JQ2B9JePtYOusSz9w6YRTdZTFOXsVdrOnBEoyK1/7YBkJIXZDMUaUA1FN0RqRm56ZEIBU7ECuQ9CQ==
   dependencies:
     "@apollosproject/data-schema" "^2.29.3"
     "@apollosproject/server-core" "^2.29.3"
@@ -236,10 +236,10 @@
     apollo-datasource "^0.2.0"
     ioredis "4.14.1"
 
-"@apollosproject/data-connector-rock@^2.29.3":
-  version "2.29.3"
-  resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-rock/-/data-connector-rock-2.29.3.tgz#0428c140c38e9f4e11f453c723215fcd025ef4c7"
-  integrity sha512-B2JB2iSUuGEXE0ZC4U63YeYSXnSz75AdhxHlJM6obgHFot+PrBzyfhEFp7EV2+kgAzV7tvGIcu64TOIYxaND7A==
+"@apollosproject/data-connector-rock@^2.29.4-canary.0":
+  version "2.29.4-canary.0"
+  resolved "https://registry.yarnpkg.com/@apollosproject/data-connector-rock/-/data-connector-rock-2.29.4-canary.0.tgz#53fb253dc4d08376eb3a018ced9ecc5e248c45ce"
+  integrity sha512-hpw2Kcf1AwyhHJHjas/CCEUa6keVxa8j36kT4Er82HBbysa21mgpP73H2pZ4Z2oF0JOLfKzUAvyjF6FAnbxAfw==
   dependencies:
     awesome-phonenumber "^2.4.2"
     form-data "^4.0.0"
