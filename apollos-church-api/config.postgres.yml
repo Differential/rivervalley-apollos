@@ -92,6 +92,14 @@ TABS:
             channelIds:
               - 299478a2-2bb9-4a8c-8158-49aa6399d28f
       type: VerticalCardList
+    - subtitle: Coming Up
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            limit: 6
+            channelIds:
+              - 38
+      type: HorizontalCardList
     - subtitle: Next up in DiscipleU
       algorithms:
         - type: DISCIPLEU_NEXT_UP
@@ -107,8 +115,8 @@ TABS:
         arguments:
           channelIds:
             - e45fda8b-0498-4cd4-a8ea-047080585afb
-          limit: 3
-      type: VerticalCardList
+          limit: 6
+      type: HorizontalCardList
     - subtitle: Read the Bible
       type: HorizontalCardList
       algorithms:
