@@ -98,7 +98,7 @@ TABS:
           arguments:
             limit: 6
             channelIds:
-              - 38
+              - 63de3871-d80f-4b55-bf4e-eca67f454238
       type: HorizontalCardList
     - subtitle: Next up in DiscipleU
       algorithms:
