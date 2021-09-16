@@ -32,7 +32,7 @@ import {
   Campus as RockCampus,
   ContentChannel,
   Feature as RockFeature,
-  //ActionAlgorithm as RockActionAlgorithm,
+  ActionAlgorithm as RockActionAlgorithm,
 } from '@apollosproject/data-connector-rock';
 
 import {
@@ -52,12 +52,12 @@ import {
   ContentItem as PostgresContentItem,
   ContentItemsConnection,
   ContentItemCategory,
-  ActionAlgorithm as PostgresActionAlgorithm,
-  //PrayerRequest as PostgresPrayerRequest,
+  // ActionAlgorithm as PostgresActionAlgorithm,
+  // PrayerRequest as PostgresPrayerRequest,
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
-import * as RockActionAlgorithm from './ActionAlgorithms';
+import * as RVActionAlgorithm from './ActionAlgorithms';
 
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
@@ -71,14 +71,15 @@ import {
 const postgresContentModules = {
   Interactions,
   Likes,
-  ActionAlgorithm: PostgresActionAlgorithm,
+  // ActionAlgorithm: PostgresActionAlgorithm,
+  ActionAlgorithm: RVActionAlgorithm,
   Feature: PostgresFeature,
   PostgresMedia,
   Tag,
   ContentItem: PostgresContentItem,
   ContentItemsConnection,
   ContentChannel: ContentItemCategory,
-  //PrayerRequest: PostgresPrayerRequest,
+  // PrayerRequest: PostgresPrayerRequest,
   RockCampus: { dataSource: RockCampus.dataSource },
   Campus,
   PostgresDefaultCampusOverride,
