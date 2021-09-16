@@ -3,9 +3,22 @@ import { ActionAlgorithm } from '@apollosproject/data-connector-postgres';
 class dataSource extends ActionAlgorithm.dataSource {
   ACTION_ALGORITHMS = {
     ...this.ACTION_ALGORITHMS,
-    GO_PRAY: this.goPray.bind(this),
     DISCIPLEU_NEXT_UP: this.discipleuNextUp.bind(this),
   };
+
+  async dailyPrayerAlgorithm({
+    limit = 10,
+    numberDaysSincePrayer,
+    personId,
+  } = {}) {
+    const { PrayerRequest, Feature } = this.context.dataSources;
+    Feature.setCacheHint({ scope: 'PRIVATE' });
+    const cursor = await PrayerRequest.byDailyPrayerFeed({
+      numberDaysSincePrayer,
+      personId,
+    });
+    return cursor.top(limit).get();
+  }
 
   async discipleuNextUp({ channelIds = [], limit = 3 } = {}) {
     const nextUp = await this.seriesInProgressAlgorithm({
@@ -30,31 +43,6 @@ class dataSource extends ActionAlgorithm.dataSource {
     if (nextUp[0].id === 'EmptyCard') start = 1;
 
     return nextUp.slice(start, limit);
-  }
-
-  // eslint-disable-next-line class-methods-use-this
-  async goPray() {
-    return [
-      {
-        id: `pray-for-others`,
-        title: 'Pray for others',
-        subtitle: 'The church needs your prayer',
-        relatedNode: {
-          __type: 'Url',
-          url: 'RiverValley://app-link/nav/Tabs?screen=Pray',
-          id: 'RiverValley://app-link/nav/Tabs?screen=Pray',
-        },
-        image: {
-          sources: [
-            {
-              uri: 'https://rock.rivervalley.org/GetImage.ashx?id=476391',
-            },
-          ],
-        },
-        action: 'OPEN_URL',
-        // summary: ContentItem.createSummary(item),
-      },
-    ];
   }
 }
 
