@@ -33,7 +33,6 @@ import {
   ContentChannel,
   Feature as RockFeature,
   //ActionAlgorithm as RockActionAlgorithm,
-  PrayerRequest
 } from '@apollosproject/data-connector-rock';
 
 import {
@@ -107,6 +106,7 @@ const data = {
   ...(process.env.DATABASE_CONTENT
     ? postgresContentModules
     : rockContentModules),
+  PrayerRequest,
   Cloudinary,
   Auth,
   AuthSms,
