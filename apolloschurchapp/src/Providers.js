@@ -6,18 +6,41 @@ import { Providers, NavigationService } from '@apollosproject/ui-kit';
 import { AuthProvider } from '@apollosproject/ui-auth';
 import { AnalyticsProvider } from '@apollosproject/ui-analytics';
 import { NotificationsProvider } from '@apollosproject/ui-notifications';
+import { snakeCase } from 'lodash';
 import {
   LiveProvider,
   ACCEPT_FOLLOW_REQUEST,
 } from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
 import RNAmplitude from 'react-native-amplitude-analytics';
+import OneSignal from 'react-native-onesignal';
+
 import { ONBOARDING_VERSION } from './ui/Onboarding';
 
 import ClientProvider, { client } from './client';
 import customTheme, { customIcons } from './theme';
 
 const amplitude = new RNAmplitude(ApollosConfig.AMPLITUDE_API_KEY);
+
+const trackOneSignal = ({ eventName, properties }) => {
+  const acceptedEvents = [
+    'PrayerPrayed',
+    'PrayerAdded',
+    'View Content',
+    'Comment Added',
+  ];
+  if (!acceptedEvents.includes(eventName)) return;
+
+  const tags = {};
+
+  tags[snakeCase(`Last Date ${eventName}`)] = Date.now();
+
+  if (eventName === 'View Content') {
+    tags[snakeCase(`Last Date ${properties.parentChannel}`)] = Date.now();
+  }
+
+  OneSignal.sendTags(tags);
+};
 
 const AppProviders = (props) => {
   const islight = useColorScheme() === 'light';
@@ -67,8 +90,10 @@ const AppProviders = (props) => {
         >
           <AnalyticsProvider
             trackFunctions={[
-              ({ eventName, properties }) =>
-                amplitude.logEvent(eventName, properties),
+              ({ eventName, properties }) => {
+                amplitude.logEvent(eventName, properties);
+              },
+              trackOneSignal,
             ]}
           >
             <LiveProvider>

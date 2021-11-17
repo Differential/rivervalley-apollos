@@ -25,6 +25,13 @@ const ContentSingle = (props) => {
           ... on ContentNode {
             title
           }
+          # for advanced onesignal notifications and analytics
+          ... on ContentItem {
+            parentChannel {
+              name
+              id
+            }
+          }
         }
       }
     `,
@@ -43,6 +50,7 @@ const ContentSingle = (props) => {
         properties={{
           title: data?.node?.title,
           itemId: nodeId,
+          parentChannel: data?.node?.parentChannel?.name,
         }}
       />
       <PaddedNodeSingleConnected nodeId={nodeId} />
