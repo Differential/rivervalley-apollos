@@ -100,6 +100,14 @@ TABS:
             channelIds:
               - 299478a2-2bb9-4a8c-8158-49aa6399d28f
       type: VerticalCardList
+    - subtitle: Christmas Devotional
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            limit: 1
+            channelIds:
+              - 6b05a1f6-13d9-439c-a963-6f5bba4f55f4
+      type: VerticalCardList
     - subtitle: Next up in DiscipleU
       algorithms:
         - type: DISCIPLEU_NEXT_UP
@@ -117,6 +125,14 @@ TABS:
           arguments:
             channelIds:
               - 299478a2-2bb9-4a8c-8158-49aa6399d28f
+    - subtitle: Christmas Devotional
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            limit: 6
+            channelIds:
+              - 6b05a1f6-13d9-439c-a963-6f5bba4f55f4
+      type: HorizontalCardList
     - subtitle: Go Kids SOAP
       type: HorizontalCardList
       algorithms:
