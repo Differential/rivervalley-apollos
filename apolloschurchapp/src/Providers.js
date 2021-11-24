@@ -32,11 +32,12 @@ const trackOneSignal = ({ eventName, properties }) => {
   if (!acceptedEvents.includes(eventName)) return;
 
   const tags = {};
+  const timestamp = Math.floor(Date.now() / 1000);
 
-  tags[snakeCase(`Last Date ${eventName}`)] = Date.now();
+  tags[snakeCase(`Last Date ${eventName}`)] = timestamp;
 
   if (eventName === 'View Content') {
-    tags[snakeCase(`Last Date ${properties.parentChannel}`)] = Date.now();
+    tags[snakeCase(`Last Date ${properties.parentChannel}`)] = timestamp;
   }
 
   OneSignal.sendTags(tags);
