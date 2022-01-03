@@ -76,7 +76,7 @@ const OnboardingVideo = memo(
             >
               {!videoEnded && (
                 <StyledVideo
-                  source={require('./shortened-porch-app-video.mp4')}
+                  source={require('./app-welcome-video.mp4')}
                   fullscreen
                   onEnd={handleOnEnd}
                   paused={skipVideo}
