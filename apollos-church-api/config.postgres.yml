@@ -110,6 +110,13 @@ TABS:
       type: HorizontalCardList
 
   READ:
+    - subtitle: 21 Days
+      type: HorizontalCardList
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 26cdba79-2f20-43d6-b0b2-3ba69557afaf
     - subtitle: Daily SOAP
       type: HorizontalCardList
       algorithms:
