@@ -88,7 +88,7 @@ TABS:
       algorithms:
         - type: CONTENT_FEED
           arguments:
-            limit: 1
+            limit: 2
             channelIds:
               - 63de3871-d80f-4b55-bf4e-eca67f454238
       type: VerticalCardList
