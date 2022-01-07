@@ -1,5 +1,4 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { BackgroundView, styled } from '@apollosproject/ui-kit';
 
 import { Landing } from '@apollosproject/ui-onboarding';

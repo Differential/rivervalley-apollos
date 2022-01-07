@@ -1,4 +1,3 @@
-import React from 'react';
 import { View, Image } from 'react-native';
 import { Query } from '@apollo/client/react/components';
 import PropTypes from 'prop-types';

@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import { memo, useState } from 'react';
 import PropTypes from 'prop-types';
 import Video from 'react-native-video';
 import {
@@ -31,7 +31,6 @@ const SecondaryButton = styled(({ theme }) => ({
 }))(ButtonLink);
 
 // memo = sfc PureComponent 💥
-// eslint-disable-next-line react/display-name
 const OnboardingVideo = memo(
   ({
     isLoading,

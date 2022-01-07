@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Animated } from 'react-native';
 import { ModalViewHeader } from '@apollosproject/ui-kit';

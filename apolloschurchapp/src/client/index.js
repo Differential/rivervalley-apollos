@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { ApolloProvider, ApolloClient, ApolloLink } from '@apollo/client';
 import { getVersion, getApplicationName } from 'react-native-device-info';
@@ -58,7 +58,6 @@ export const client = new ApolloClient({
 });
 
 // Hack to give auth link access to method on client;
-// eslint-disable-next-line prefer-destructuring
 clearStore = client.clearStore;
 
 wipeData();
