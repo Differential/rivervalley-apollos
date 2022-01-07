@@ -1,7 +1,4 @@
-/* eslint-disable react/jsx-handler-names */
-
-import React from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, useColorScheme } from 'react-native';
 import {
   NavigationContainer,
   useNavigation,
@@ -17,10 +14,12 @@ import {
   BackgroundView,
   withTheme,
   NavigationService,
+  Providers as ThemeProvider,
 } from '@apollosproject/ui-kit';
 import Passes from '@apollosproject/ui-passes';
 import { MapViewConnected as Location } from '@apollosproject/ui-mapview';
 import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 import {
   ContentFeedConnected,
@@ -30,10 +29,10 @@ import {
 
 import Providers from './Providers';
 import ContentSingle from './content-single';
-import Event from './event';
 import Tabs from './tabs';
 import LandingScreen from './ui/LandingScreen';
 import Onboarding from './ui/Onboarding';
+import customTheme, { customIcons } from './theme';
 
 enableScreens(); // improves performance for react-navigation
 
@@ -52,6 +51,12 @@ const ProtectedRouteWithSplashScreen = () => {
     />
   );
 };
+
+const WrappedContentSingle = (props) => (
+  <BottomSheetModalProvider>
+    <ContentSingle {...props} />
+  </BottomSheetModalProvider>
+);
 
 const ThemedNavigationContainer = withTheme(({ theme, ...props }) => ({
   theme: {
@@ -72,72 +77,95 @@ const ThemedNavigationContainer = withTheme(({ theme, ...props }) => ({
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-const App = () => (
-  <Providers>
-    <BackgroundView>
-      <AppStatusBar />
-      <ThemedNavigationContainer
-        containerRef={NavigationService.setTopLevelNavigator}
-        onReady={NavigationService.setIsReady}
-      >
-        <Navigator
-          screenOptions={{ headerShown: false, stackPresentation: 'modal' }}
+const App = () => {
+  const islight = useColorScheme() === 'light';
+  return (
+    <ThemeProvider
+      themeInput={{
+        ...customTheme,
+        ...{
+          colors: islight ? customTheme.lightColors : customTheme.darkColors,
+        },
+      }}
+      iconInput={customIcons}
+    >
+      <BackgroundView>
+        <AppStatusBar />
+        <ThemedNavigationContainer
+          containerRef={NavigationService.setTopLevelNavigator}
+          onReady={NavigationService.setIsReady}
         >
-          <Screen
-            name="ProtectedRoute"
-            component={ProtectedRouteWithSplashScreen}
-          />
-          <Screen name="Tabs" component={Tabs} />
-          <Screen
-            name="ContentSingle"
-            component={ContentSingle}
-            options={{
-              title: 'Content',
-              stackPresentation: 'push',
-            }}
-          />
-          <Screen
-            component={ContentFeedConnected}
-            name="ContentFeed"
-            options={({ route }) => ({
-              title: route.params.itemTitle || 'Content Feed',
-              stackPresentation: 'push',
-            })}
-          />
+          <Providers>
+            <Navigator
+              screenOptions={{ headerShown: false, stackPresentation: 'modal' }}
+            >
+              <Screen
+                name="ProtectedRoute"
+                component={ProtectedRouteWithSplashScreen}
+              />
+              <Screen
+                name="Tabs"
+                component={Tabs}
+                options={{
+                  gestureEnabled: false,
+                  stackPresentation: 'push',
+                }}
+              />
+              <Screen
+                name="ContentSingle"
+                component={WrappedContentSingle}
+                options={{
+                  title: 'Content',
+                  stackPresentation: 'fullScreenModal',
+                }}
+              />
+              <Screen
+                component={ContentFeedConnected}
+                name="ContentFeed"
+                options={({ route }) => ({
+                  title: route.params.itemTitle || 'Content Feed',
+                  stackPresentation: 'push',
+                })}
+              />
 
-          <Screen name="Event" component={Event} options={{ title: 'Event' }} />
-          <Screen
-            name="Auth"
-            component={Auth}
-            options={{
-              gestureEnabled: false,
-              stackPresentation: 'push',
-            }}
-          />
-          <Screen name="Location" component={Location} />
-          <Screen
-            name="Passes"
-            component={Passes}
-            options={{ title: 'Check-In Pass' }}
-          />
-          <Screen
-            name="Onboarding"
-            component={Onboarding}
-            options={{
-              gestureEnabled: false,
-              stackPresentation: 'push',
-            }}
-          />
-          <Screen name="LandingScreen" component={LandingScreen} />
-          <Screen component={SearchScreenConnected} name="Search" />
-          <Screen
-            name="UserSettingsNavigator"
-            component={UserSettingsConnected}
-          />
-        </Navigator>
-      </ThemedNavigationContainer>
-    </BackgroundView>
-  </Providers>
-);
+              <Screen
+                name="Auth"
+                component={Auth}
+                options={{
+                  gestureEnabled: false,
+                  stackPresentation: 'push',
+                }}
+              />
+              <Screen
+                name="Location"
+                component={Location}
+                options={{ title: 'Campuses' }}
+              />
+              <Screen
+                name="Passes"
+                component={Passes}
+                options={{ title: 'Check-In Pass' }}
+              />
+              <Screen
+                name="Onboarding"
+                component={Onboarding}
+                options={{
+                  gestureEnabled: false,
+                  stackPresentation: 'push',
+                }}
+              />
+              <Screen name="LandingScreen" component={LandingScreen} />
+              <Screen component={SearchScreenConnected} name="Search" />
+              <Screen
+                name="UserSettingsNavigator"
+                component={UserSettingsConnected}
+              />
+            </Navigator>
+          </Providers>
+        </ThemedNavigationContainer>
+      </BackgroundView>
+    </ThemeProvider>
+  );
+};
 
 export default App;

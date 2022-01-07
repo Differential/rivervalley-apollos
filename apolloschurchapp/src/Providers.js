@@ -1,8 +1,6 @@
 import querystring from 'querystring';
-import React from 'react';
-import { useColorScheme } from 'react-native';
 import ApollosConfig from '@apollosproject/config';
-import { Providers, NavigationService } from '@apollosproject/ui-kit';
+import { NavigationService } from '@apollosproject/ui-kit';
 import { AuthProvider } from '@apollosproject/ui-auth';
 import { AnalyticsProvider } from '@apollosproject/ui-analytics';
 import { NotificationsProvider } from '@apollosproject/ui-notifications';
@@ -18,7 +16,6 @@ import OneSignal from 'react-native-onesignal';
 import { ONBOARDING_VERSION } from './ui/Onboarding';
 
 import ClientProvider, { client } from './client';
-import customTheme, { customIcons } from './theme';
 
 const amplitude = new RNAmplitude(ApollosConfig.AMPLITUDE_API_KEY);
 
@@ -29,7 +26,9 @@ const trackOneSignal = ({ eventName, properties }) => {
     'View Content',
     'Comment Added',
   ];
-  if (!acceptedEvents.includes(eventName)) return;
+  if (!acceptedEvents.includes(eventName)) {
+    return;
+  }
 
   const tags = {};
   const timestamp = Math.floor(Date.now() / 1000);
@@ -43,10 +42,9 @@ const trackOneSignal = ({ eventName, properties }) => {
   OneSignal.sendTags(tags);
 };
 
-const AppProviders = (props) => {
-  const islight = useColorScheme() === 'light';
+const AppProviders = ({ children }) => {
   return (
-    <ClientProvider {...props}>
+    <ClientProvider>
       <NotificationsProvider
         oneSignalKey={ApollosConfig.ONE_SIGNAL_KEY}
         // TODO deprecated prop
@@ -57,14 +55,15 @@ const AppProviders = (props) => {
             : url.split('//')[1];
 
           const [route, location] = path.split('/');
-          if (route === 'content')
+          if (route === 'content') {
             NavigationService.navigate('ContentSingle', { itemId: location });
+          }
           if (route === 'nav') {
-            const [cleanPath, query] = location.split('?');
-            const args = querystring.parse(query);
+            const [component, params] = location.split('?');
+            const args = querystring.parse(params);
             NavigationService.navigate(
               // turns "home" into "Home"
-              cleanPath[0].toUpperCase() + cleanPath.substring(1),
+              component[0].toUpperCase() + component.substring(1),
               args
             );
           }
@@ -97,20 +96,7 @@ const AppProviders = (props) => {
               trackOneSignal,
             ]}
           >
-            <LiveProvider>
-              <Providers
-                themeInput={{
-                  ...customTheme,
-                  ...{
-                    colors: islight
-                      ? customTheme.lightColors
-                      : customTheme.darkColors,
-                  },
-                }}
-                iconInput={customIcons}
-                {...props}
-              />
-            </LiveProvider>
+            <LiveProvider>{children}</LiveProvider>
           </AnalyticsProvider>
         </AuthProvider>
       </NotificationsProvider>

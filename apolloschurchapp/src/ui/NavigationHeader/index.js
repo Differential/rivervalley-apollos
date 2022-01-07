@@ -5,8 +5,9 @@ import { ModalViewHeader } from '@apollosproject/ui-kit';
 
 const NavigationHeader = ({ previous, scene, navigation }) => {
   let onBack = null;
-  if (previous?.route?.name === 'ContentSingle')
+  if (previous?.route?.name === 'ContentSingle') {
     onBack = () => navigation.pop();
+  }
   const onClose = () => {
     navigation.goBack();
   };

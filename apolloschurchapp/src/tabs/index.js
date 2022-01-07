@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Image, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
@@ -48,7 +48,6 @@ const ProfileButton = () => {
   );
 };
 
-const HeaderCenter = () => <HeaderLogo />;
 const SearchButton = () => {
   const navigation = useNavigation();
   const theme = useTheme();
@@ -71,9 +70,9 @@ const SearchButton = () => {
 const HomeTab = createFeatureFeedTab({
   screenOptions: {
     headerHideShadow: true,
-    headerLeft: ProfileButton,
-    headerCenter: HeaderCenter,
+    headerCenter: HeaderLogo,
     headerRight: SearchButton,
+    headerLeft: ProfileButton,
     headerLargeTitle: false,
   },
   tabName: 'Home',
@@ -126,16 +125,13 @@ const TabNavigator = () => {
   // this is only used by the tab loaded first
   // if there is a new version of the onboarding flow,
   // we'll navigate there first to show new screens
-  useEffect(
-    () => {
-      checkOnboardingStatusAndNavigate({
-        client,
-        navigation: NavigationService,
-        navigateHome: false,
-      });
-    },
-    [client]
-  );
+  useEffect(() => {
+    checkOnboardingStatusAndNavigate({
+      client,
+      navigation: NavigationService,
+      navigateHome: false,
+    });
+  }, [client]);
   return (
     <Navigator lazy>
       <Screen
