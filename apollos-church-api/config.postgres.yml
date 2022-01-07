@@ -88,10 +88,18 @@ TABS:
       algorithms:
         - type: CONTENT_FEED
           arguments:
-            limit: 6
+            limit: 1
             channelIds:
               - 63de3871-d80f-4b55-bf4e-eca67f454238
       type: VerticalCardList
+    - subtitle: 21 Days
+      type: VerticalCardList
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 26cdba79-2f20-43d6-b0b2-3ba69557afaf
+            limit: 1
     - subtitle: Daily Scripture
       algorithms:
         - type: CONTENT_FEED
@@ -110,6 +118,13 @@ TABS:
       type: HorizontalCardList
 
   READ:
+    - subtitle: 21 Days
+      type: HorizontalCardList
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 26cdba79-2f20-43d6-b0b2-3ba69557afaf
     - subtitle: Daily SOAP
       type: HorizontalCardList
       algorithms:
@@ -117,14 +132,6 @@ TABS:
           arguments:
             channelIds:
               - 299478a2-2bb9-4a8c-8158-49aa6399d28f
-    - subtitle: Christmas Devotional
-      algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            limit: 6
-            channelIds:
-              - 6b05a1f6-13d9-439c-a963-6f5bba4f55f4
-      type: HorizontalCardList
     - subtitle: Go Kids SOAP
       type: HorizontalCardList
       algorithms:
@@ -181,6 +188,7 @@ TABS:
     - type: VerticalPrayerList
       title: Your Prayers
   CONNECT:
+    - type: FollowPeople
     - type: ActionTable
       title: Connect to Apollos
       actions:

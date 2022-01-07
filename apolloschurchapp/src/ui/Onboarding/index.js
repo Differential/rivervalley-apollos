@@ -17,6 +17,7 @@ import {
   onboardingComplete,
   WITH_USER_ID,
 } from '@apollosproject/ui-onboarding';
+import OnboardingVideo from './OnboardingVideo';
 
 const FullscreenBackgroundView = styled({
   position: 'absolute',
@@ -64,6 +65,7 @@ function Onboarding({ navigation, route }) {
           >
             {({ swipeForward }) => (
               <>
+                <OnboardingVideo onPressPrimary={swipeForward} />
                 <FeaturesConnected
                   onPressPrimary={swipeForward}
                   BackgroundComponent={

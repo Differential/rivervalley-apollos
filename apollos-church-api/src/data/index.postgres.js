@@ -49,7 +49,7 @@ import {
   Person as PostgresPerson,
   Media as PostgresMedia,
   Feature as PostgresFeature,
-  ContentItem as PostgresContentItem,
+  // ContentItem as PostgresContentItem,
   ContentItemsConnection,
   ContentItemCategory,
   // ActionAlgorithm as PostgresActionAlgorithm,
@@ -58,6 +58,7 @@ import {
 
 import * as Theme from './theme';
 import * as RVActionAlgorithm from './ActionAlgorithms';
+import * as RVContentItem from './ContentItem';
 
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
@@ -77,7 +78,7 @@ const postgresContentModules = {
   Feature: PostgresFeature,
   PostgresMedia,
   Tag,
-  ContentItem: PostgresContentItem,
+  ContentItem: RVContentItem,
   ContentItemsConnection,
   ContentChannel: ContentItemCategory,
   // PrayerRequest: PostgresPrayerRequest,
