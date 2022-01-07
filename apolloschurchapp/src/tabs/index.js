@@ -1,20 +1,24 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Image } from 'react-native';
+import { Image, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
-  Icon,
-  Touchable,
   NavigationService,
   withTheme,
+  useTheme,
+  Icon,
+  Touchable,
 } from '@apollosproject/ui-kit';
 import { useApolloClient } from '@apollo/client';
-
-import { createFeatureFeedTab } from '@apollosproject/ui-connected';
+import {
+  createFeatureFeedTab,
+  UserAvatarConnected,
+  ConnectScreenConnected,
+} from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
-import { ONBOARDING_VERSION } from '../ui/Onboarding';
-import Connect from './connect';
+import ActionTable from './connect/ActionTable/index';
+import ActionBar from './connect/ActionBar';
 import tabBarIcon from './tabBarIcon';
 
 const HeaderLogo = withTheme(({ theme }) => ({
@@ -29,35 +33,47 @@ const HeaderLogo = withTheme(({ theme }) => ({
       : require('./wordmark.dark.png'),
 }))(Image);
 
-const SearchIcon = withTheme(({ theme: { colors, sizing: { baseUnit } } }) => ({
-  name: 'search',
-  size: baseUnit * 2,
-  fill: colors.primary,
-}))(Icon);
-
-const SearchButton = ({ onPress }) => (
-  <Touchable onPress={onPress}>
-    <SearchIcon />
-  </Touchable>
-);
-
-SearchButton.propTypes = {
-  onPress: PropTypes.func,
+const ProfileButton = () => {
+  const navigation = useNavigation();
+  return (
+    <Touchable
+      onPress={() => {
+        navigation.navigate('UserSettingsNavigator');
+      }}
+    >
+      <View>
+        <UserAvatarConnected size="xsmall" />
+      </View>
+    </Touchable>
+  );
 };
 
 const HeaderCenter = () => <HeaderLogo />;
-
-const HeaderRight = () => {
+const SearchButton = () => {
   const navigation = useNavigation();
-  return <SearchButton onPress={() => navigation.navigate('Search')} />;
+  const theme = useTheme();
+  return (
+    <Touchable
+      onPress={() => {
+        navigation.navigate('Search');
+      }}
+    >
+      <Icon
+        name="search"
+        size={theme.sizing.baseUnit * 2}
+        fill={theme.colors.primary}
+      />
+    </Touchable>
+  );
 };
 
 // we nest stack inside of tabs so we can use all the fancy native header features
 const HomeTab = createFeatureFeedTab({
   screenOptions: {
     headerHideShadow: true,
+    headerLeft: ProfileButton,
     headerCenter: HeaderCenter,
-    headerRight: HeaderRight,
+    headerRight: SearchButton,
     headerLargeTitle: false,
   },
   tabName: 'Home',
@@ -66,19 +82,44 @@ const HomeTab = createFeatureFeedTab({
 
 const ExploreTab = createFeatureFeedTab({
   screenOptions: {
-    headerRight: HeaderRight,
+    headerRight: SearchButton,
+  },
+  options: {
+    headerLeft: ProfileButton,
   },
   tabName: 'Explore',
   feedName: 'READ',
 });
 
 const WatchTab = createFeatureFeedTab({
-  screenOptions: {
-    headerRight: HeaderRight,
+  options: {
+    headerLeft: ProfileButton,
   },
   tabName: 'Watch',
   feedName: 'WATCH',
 });
+
+const CustomConnectScreen = () => (
+  <ConnectScreenConnected ActionBar={ActionBar} ActionTable={ActionTable} />
+);
+
+const ConnectTabStack = createNativeStackNavigator();
+const ConnectTabStackNavigator = () => (
+  <ConnectTabStack.Navigator
+    screenOptions={{
+      headerHideShadow: true,
+      headerLargeTitle: true,
+    }}
+  >
+    <ConnectTabStack.Screen
+      name={'Connect'}
+      component={CustomConnectScreen}
+      options={{
+        headerLeft: ProfileButton,
+      }}
+    />
+  </ConnectTabStack.Navigator>
+);
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -92,7 +133,6 @@ const TabNavigator = () => {
       checkOnboardingStatusAndNavigate({
         client,
         navigation: NavigationService,
-        latestOnboardingVersion: ONBOARDING_VERSION,
         navigateHome: false,
       });
     },
@@ -110,7 +150,6 @@ const TabNavigator = () => {
         component={WatchTab}
         options={{ tabBarIcon: tabBarIcon('watch') }}
       />
-
       <Screen
         name="Explore"
         component={ExploreTab}
@@ -118,8 +157,10 @@ const TabNavigator = () => {
       />
       <Screen
         name="Connect"
-        component={Connect}
-        options={{ tabBarIcon: tabBarIcon('connect') }}
+        component={ConnectTabStackNavigator}
+        options={{
+          tabBarIcon: tabBarIcon('connect'),
+        }}
       />
     </Navigator>
   );

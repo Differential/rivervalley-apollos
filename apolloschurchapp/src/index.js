@@ -25,7 +25,9 @@ import Auth, { ProtectedRoute } from '@apollosproject/ui-auth';
 import {
   ContentFeedConnected,
   SearchScreenConnected,
+  UserSettingsConnected,
 } from '@apollosproject/ui-connected';
+
 import Providers from './Providers';
 import ContentSingle from './content-single';
 import Event from './event';
@@ -128,6 +130,10 @@ const App = () => (
           />
           <Screen name="LandingScreen" component={LandingScreen} />
           <Screen component={SearchScreenConnected} name="Search" />
+          <Screen
+            name="UserSettingsNavigator"
+            component={UserSettingsConnected}
+          />
         </Navigator>
       </ThemedNavigationContainer>
     </BackgroundView>
