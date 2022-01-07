@@ -5,7 +5,7 @@
   "engines": {
     "node": ">=14"
   },
-    "scripts": {
+  "scripts": {
     "setup": "./scripts/init.sh",
     "ios": "react-native run-ios",
     "android": "SIM=\"$($HOME/Library/Android/sdk/emulator/emulator -list-avds | sed -n 1p)\" && $HOME/Library/Android/sdk/emulator/emulator -avd \"${SIM}\" & react-native run-android",
@@ -45,9 +45,9 @@
     "@apollosproject/ui-analytics": "^2.41.0",
     "@apollosproject/ui-auth": "^2.41.0",
     "@apollosproject/ui-connected": "^2.41.0",
-    "@apollosproject/ui-fragments": "^2.41.0",
+    "@apollosproject/ui-fragments": "^2.41.1-canary.3",
     "@apollosproject/ui-htmlview": "^2.41.0",
-    "@apollosproject/ui-kit": "^2.41.0",
+    "@apollosproject/ui-kit": "^2.41.1-canary.7",
     "@apollosproject/ui-mapview": "^2.41.0",
     "@apollosproject/ui-media-player": "^2.41.0",
     "@apollosproject/ui-notifications": "^2.41.0",
