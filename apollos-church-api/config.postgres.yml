@@ -84,14 +84,6 @@ TABS:
       isCard: false
       type: PrayerList
       subtitle: Daily Prayer
-    - subtitle: Coming Up
-      algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            limit: 2
-            channelIds:
-              - 63de3871-d80f-4b55-bf4e-eca67f454238
-      type: VerticalCardList
     - subtitle: 21 Days
       type: VerticalCardList
       algorithms:
@@ -116,6 +108,14 @@ TABS:
             channelIds:
               - 299478a2-2bb9-4a8c-8158-49aa6399d28f
       type: VerticalCardList
+    - subtitle: Coming Up
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            limit: 2
+            channelIds:
+              - 63de3871-d80f-4b55-bf4e-eca67f454238
+      type: VerticalCardList
     - subtitle: Next up in DiscipleU
       algorithms:
         - type: DISCIPLEU_NEXT_UP
@@ -126,13 +126,6 @@ TABS:
       type: HorizontalCardList
 
   READ:
-    - subtitle: Ages Album Devotional
-      type: HorizontalCardList
-      algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 99b4d840-b224-48af-8922-07aa03514f8d
     - subtitle: 21 Days
       type: HorizontalCardList
       algorithms:
@@ -161,6 +154,13 @@ TABS:
           arguments:
             channelIds:
               - 01d44686-53b0-4921-a0b2-b034d1cf05e1
+     - subtitle: Ages Album Devotional
+      type: HorizontalCardList
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 99b4d840-b224-48af-8922-07aa03514f8d
     - algorithms:
       - type: CONTENT_FEED
         arguments:
