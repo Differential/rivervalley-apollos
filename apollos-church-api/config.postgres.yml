@@ -161,7 +161,7 @@ TABS:
           arguments:
             channelIds:
               - 01d44686-53b0-4921-a0b2-b034d1cf05e1
-    - subtitle: Go Kids SOAP
+    - subtitle: Pray for the Nations
       type: HorizontalCardList
       algorithms:
         - type: CONTENT_FEED
