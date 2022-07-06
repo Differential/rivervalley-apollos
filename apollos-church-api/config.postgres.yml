@@ -92,6 +92,13 @@ TABS:
             channelIds:
               - 26cdba79-2f20-43d6-b0b2-3ba69557afaf
             limit: 1
+    - type: VerticalCardList
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 1d4b460a-19c1-415f-8785-61e97de7bfea
+            limit: 1            
     - subtitle: Holy Week Devotional
       type: VerticalCardList
       algorithms:
@@ -154,6 +161,13 @@ TABS:
           arguments:
             channelIds:
               - 01d44686-53b0-4921-a0b2-b034d1cf05e1
+    - subtitle: Go Kids SOAP
+      type: HorizontalCardList
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 1d4b460a-19c1-415f-8785-61e97de7bfea              
     - subtitle: Ages Album Devotional
       type: HorizontalCardList
       algorithms:
