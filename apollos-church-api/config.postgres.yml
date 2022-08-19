@@ -183,7 +183,14 @@ TABS:
         - type: CONTENT_FEED
           arguments:
             channelIds:
-              - 1d4b460a-19c1-415f-8785-61e97de7bfea              
+              - 1d4b460a-19c1-415f-8785-61e97de7bfea   
+    - subtitle: Promise Principle
+      type: HorizontalCardList
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 518177d1-6d06-409a-af7e-2ff306f71879           
     - subtitle: Ages Album Devotional
       type: HorizontalCardList
       algorithms:
