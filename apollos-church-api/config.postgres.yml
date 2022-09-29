@@ -149,6 +149,13 @@ TABS:
           arguments:
             channelIds:
               - 26cdba79-2f20-43d6-b0b2-3ba69557afaf
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:26cdba79-2f20-43d6-b0b2-3ba69557afaf
+          title: 21 Days    
     - subtitle: Holy Week
       type: HorizontalCardList
       algorithms:
@@ -156,6 +163,13 @@ TABS:
           arguments:
             channelIds:
               - 50eb23db-694d-4199-ad05-bfc8516cff84
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:50eb23db-694d-4199-ad05-bfc8516cff84
+          title: Holy Week
     - subtitle: Daily SOAP
       type: HorizontalCardList
       algorithms:
@@ -163,6 +177,13 @@ TABS:
           arguments:
             channelIds:
               - 299478a2-2bb9-4a8c-8158-49aa6399d28f
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:299478a2-2bb9-4a8c-8158-49aa6399d28f
+          title: Daily SOAP 
     - subtitle: Go Kids SOAP
       type: HorizontalCardList
       algorithms:
@@ -170,6 +191,13 @@ TABS:
           arguments:
             channelIds:
               - 01d44686-53b0-4921-a0b2-b034d1cf05e1
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:299478a2-2bb9-4a8c-8158-49aa6399d28f
+          title: Go Kids SOAP 
     - subtitle: Seek Week
       type: HorizontalCardList
       algorithms:
@@ -177,20 +205,41 @@ TABS:
           arguments:
             channelIds:
               - cc93a4c5-c205-41b8-b1b6-631eed37ee68
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:cc93a4c5-c205-41b8-b1b6-631eed37ee68
+          title: Seek Week 
     - subtitle: Pray for the Nations
       type: HorizontalCardList
       algorithms:
         - type: CONTENT_FEED
           arguments:
             channelIds:
-              - 1d4b460a-19c1-415f-8785-61e97de7bfea   
+              - 1d4b460a-19c1-415f-8785-61e97de7bfea
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:1d4b460a-19c1-415f-8785-61e97de7bfea
+          title: Pray for the Nations 
     - subtitle: Promise Principle
       type: HorizontalCardList
       algorithms:
         - type: CONTENT_FEED
           arguments:
             channelIds:
-              - 518177d1-6d06-409a-af7e-2ff306f71879           
+              - 518177d1-6d06-409a-af7e-2ff306f71879
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:518177d1-6d06-409a-af7e-2ff306f71879
+          title: Promise Principle
     - subtitle: Ages Album Devotional
       type: HorizontalCardList
       algorithms:
@@ -198,6 +247,13 @@ TABS:
           arguments:
             channelIds:
               - 99b4d840-b224-48af-8922-07aa03514f8d
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:99b4d840-b224-48af-8922-07aa03514f8d
+          title: Ages Album Devotional
     - algorithms:
       - type: CONTENT_FEED
         arguments:
@@ -206,6 +262,13 @@ TABS:
           limit: 6
       type: HorizontalCardList
       subtitle: Keep Reading
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:e45fda8b-0498-4cd4-a8ea-047080585afb
+          title: Keep Reading
 
   WATCH:
     - subtitle: Latest Messages
