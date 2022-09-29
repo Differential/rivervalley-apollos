@@ -35,7 +35,7 @@ const ActionTable = () => (
         </RowHeader>
         <TableView>
           <Touchable
-            onPress={() => openUrl('https://www.rivervalley.org/locations/')}
+            onPress={() => openUrl('https://www.rivervalley.org/campus/')}
           >
             <Cell>
               <CellText>Find a location</CellText>
@@ -44,21 +44,32 @@ const ActionTable = () => (
           </Touchable>
           <Divider />
           <Touchable
-            onPress={() => openUrl('https://www.rivervalley.org/next/')}
+            onPress={() => openUrl('https://www.rivervalley.org/all-events/')}
           >
             <Cell>
-              <CellText>Sign up for Welcome Home</CellText>
+              <CellText>Register for an event</CellText>
               <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
           <Divider />
           <Touchable
             onPress={() =>
-              openUrl('https://www.rivervalley.org/next-steps/water-baptism/')
+              openUrl(
+                'https://www.rivervalley.org/all-events/?types=serve-our-community/'
+              )
             }
           >
             <Cell>
-              <CellText>Get water baptized</CellText>
+              <CellText>Serve our community</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+          <Touchable
+            onPress={() => openUrl('https://www.rivervalley.org/global-teams/')}
+          >
+            <Cell>
+              <CellText>Go on a Global Team</CellText>
               <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
