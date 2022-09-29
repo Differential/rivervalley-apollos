@@ -230,14 +230,21 @@ TABS:
           channelIds:
             - e9db0f24-e01a-4241-bd81-3450325d7284
       type: HorizontalCardList
-      subtitle: All Message Series
+      subtitle: Message Series
     - algorithms:
       - type: CONTENT_FEED
         arguments:
           channelIds:
             - 2533d86c-1e3b-4892-b8f5-7ec74c7bac79
       type: HorizontalCardList
-      subtitle: All DiscipleU Series
+      subtitle: DiscipleU Series
+    - algorithms:
+      - type: CONTENT_FEED
+        arguments:
+          channelIds:
+            - ea6aad8b-78a5-43e2-9cf3-57c2bd36f8a3
+      type: HorizontalCardList
+      subtitle: Worship
 
   PRAY:
     - algorithms: [DAILY_PRAYER]
