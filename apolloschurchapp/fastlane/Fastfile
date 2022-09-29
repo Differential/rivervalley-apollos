@@ -89,7 +89,7 @@ platform :ios do
       type: 'appstore',
       app_identifier: [ENV['DELIVER_APP_IDENTIFIER'],
                        "#{ENV['DELIVER_APP_IDENTIFIER']}.OneSignalNotificationServiceExtension"],
-      readonly: true
+      readonly: false
     )
     increment_build_number(build_number: number_of_commits, xcodeproj: 'ios/' << proj << '.xcodeproj')
     build_app(workspace: 'ios/' << proj << '.xcworkspace', scheme: proj)
