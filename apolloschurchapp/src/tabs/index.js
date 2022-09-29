@@ -109,7 +109,7 @@ const ConnectTabStackNavigator = () => (
     }}
   >
     <ConnectTabStack.Screen
-      name={'Connect'}
+      name={'Go'}
       component={CustomConnectScreen}
       options={{
         headerLeft: ProfileButton,
@@ -150,7 +150,7 @@ const TabNavigator = () => {
         options={{ tabBarIcon: tabBarIcon('explore') }}
       />
       <Screen
-        name="Connect"
+        name="Go"
         component={ConnectTabStackNavigator}
         options={{
           tabBarIcon: tabBarIcon('connect'),
