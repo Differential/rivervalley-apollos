@@ -308,6 +308,13 @@ TABS:
             - ea6aad8b-78a5-43e2-9cf3-57c2bd36f8a3
       type: HorizontalCardList
       subtitle: Worship
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:ea6aad8b-78a5-43e2-9cf3-57c2bd36f8a3
+          title: Ages Album Devotional
 
   PRAY:
     - algorithms: [DAILY_PRAYER]
