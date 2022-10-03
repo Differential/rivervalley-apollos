@@ -84,7 +84,7 @@ const ExploreTab = createFeatureFeedTab({
     headerRight: SearchButton,
     headerLeft: ProfileButton,
   },
-  tabName: 'Explore',
+  tabName: 'Learn',
   feedName: 'READ',
 });
 
@@ -145,7 +145,7 @@ const TabNavigator = () => {
         options={{ tabBarIcon: tabBarIcon('watch') }}
       />
       <Screen
-        name="Explore"
+        name="Learn"
         component={ExploreTab}
         options={{ tabBarIcon: tabBarIcon('explore') }}
       />
