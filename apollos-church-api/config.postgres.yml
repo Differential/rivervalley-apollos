@@ -301,6 +301,13 @@ TABS:
             - 2533d86c-1e3b-4892-b8f5-7ec74c7bac79
       type: HorizontalCardList
       subtitle: DiscipleU Series
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'View All'
+        relatedNode:
+          __typename: ContentChannel
+          apollosId: ContentChannel:2533d86c-1e3b-4892-b8f5-7ec74c7bac79
+          title: DiscipleU Series
     - algorithms:
       - type: CONTENT_FEED
         arguments:
@@ -308,13 +315,6 @@ TABS:
             - ea6aad8b-78a5-43e2-9cf3-57c2bd36f8a3
       type: HorizontalCardList
       subtitle: Worship
-      primaryAction:
-        action: OPEN_CHANNEL
-        title: 'View All'
-        relatedNode:
-          __typename: ContentChannel
-          apollosId: ContentChannel:ea6aad8b-78a5-43e2-9cf3-57c2bd36f8a3
-          title: Ages Album Devotional
 
   PRAY:
     - algorithms: [DAILY_PRAYER]
