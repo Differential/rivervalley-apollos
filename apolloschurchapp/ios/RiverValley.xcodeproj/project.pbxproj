@@ -15,7 +15,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1C48DCDE11AC47C48E918489 /* Inter-UI-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC74A378C1CC40E4B6192D7F /* Inter-UI-Medium.otf */; };
-		2AE17F608689DAE577F28E4D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		2AE17F608689DAE577F28E4D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		472CD2F2296C4878815EF34D /* Realist-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 302018D1C2064222B0F2496A /* Realist-RegularItalic.otf */; };
 		4C997C3727891BB100D5D7F1 /* libPods-OneSignalNotificationServiceExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C997C3627891BB100D5D7F1 /* libPods-OneSignalNotificationServiceExtension.a */; };
 		4CA6A042251BC0BF00DD0D97 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6A041251BC0BF00DD0D97 /* SplashScreen.storyboard */; };
@@ -132,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AE17F608689DAE577F28E4D /* BuildFile in Frameworks */,
+				2AE17F608689DAE577F28E4D /* (null) in Frameworks */,
 				EF3A30A2E55D4F8352E116D3 /* libPods-RiverValley-RiverValleyTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,7 +835,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 i386";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -854,8 +854,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
-					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(SDKROOT)/usr/lib/swift",
 					"$(inherited)",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -897,7 +896,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 i386";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -909,8 +908,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
-					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(SDKROOT)/usr/lib/swift",
 					"$(inherited)",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
