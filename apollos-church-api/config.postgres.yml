@@ -142,6 +142,13 @@ TABS:
       type: HorizontalCardList
 
   READ:
+    - subtitle: Bible Reading
+      type: HorizontalCardList
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - d74d7984-1b26-45a6-970a-5783da1d1aa6
     - subtitle: Devotionals
       type: HorizontalCardList
       algorithms:
@@ -155,7 +162,7 @@ TABS:
         relatedNode:
           __typename: ContentChannel
           apollosId: ContentChannel:92d10bf9-566a-4fee-b9b0-cad4f28cc3a9
-          title: 21 Days      
+          title: Devotionals      
     # - subtitle: 21 Days
     #   type: HorizontalCardList
     #   algorithms:
