@@ -92,14 +92,6 @@ TABS:
             channelIds:
               - 26cdba79-2f20-43d6-b0b2-3ba69557afaf
             limit: 1       
-    - subtitle: Featured Devotional
-      type: VerticalCardList
-      algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 6b05a1f6-13d9-439c-a963-6f5bba4f55f4
-            limit: 1
     - subtitle: Coming Up
       algorithms:
         - type: CONTENT_FEED
@@ -108,6 +100,14 @@ TABS:
             channelIds:
               - 63de3871-d80f-4b55-bf4e-eca67f454238
       type: VerticalCardList
+    - subtitle: Featured Devotional
+      type: VerticalCardList
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 6b05a1f6-13d9-439c-a963-6f5bba4f55f4
+            limit: 1
     - subtitle: Daily Scripture
       algorithms:
         - type: CONTENT_FEED
