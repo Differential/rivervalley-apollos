@@ -100,6 +100,14 @@ TABS:
             channelIds:
               - 6b05a1f6-13d9-439c-a963-6f5bba4f55f4
             limit: 1
+    - subtitle: Coming Up
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            limit: 2
+            channelIds:
+              - 63de3871-d80f-4b55-bf4e-eca67f454238
+      type: VerticalCardList
     - subtitle: Daily Scripture
       algorithms:
         - type: CONTENT_FEED
@@ -124,14 +132,6 @@ TABS:
             channelIds:
               - 1d4b460a-19c1-415f-8785-61e97de7bfea
             limit: 1           
-    - subtitle: Coming Up
-      algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            limit: 2
-            channelIds:
-              - 63de3871-d80f-4b55-bf4e-eca67f454238
-      type: VerticalCardList
     - subtitle: Next up in DiscipleU
       algorithms:
         - type: DISCIPLEU_NEXT_UP
