@@ -18,6 +18,21 @@ class dataSource extends ContentItem.dataSource {
 
     return features;
   };
+
+  getChildren = async (model) => {
+    const children = await super.getChildren(model);
+
+    const filteredChildren = children.filter(
+      (child) =>
+        child.active &&
+        (child.publishAt === null || child.publishAt < new Date()) &&
+        (child.expireAt === null || child.expireAt > new Date())
+    );
+
+    if (filteredChildren.length === 0) return [];
+
+    return filteredChildren;
+  };
 }
 
 const resolver = {
