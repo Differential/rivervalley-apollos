@@ -7,34 +7,36 @@ class dataSource extends ContentItem.dataSource {
   baseItemByChannelCursor = this.byContentChannelId;
 
   getFeatures = async (item) => {
-    const features = await super.getFeatures(item);
+    const initialFeatures = await super.getFeatures(item);
 
-    // This moves the Webview feature above the journal entries
-    if (features[features.length - 1]?.dataValues?.type === 'Webview') {
-      const tempFeature = features[features.length - 1];
+    const commentFeatures = initialFeatures.filter((feature) =>
+      feature.dataValues?.type.includes('Comment')
+    );
+    const otherFeatures = initialFeatures.filter(
+      (feature) => !feature.dataValues?.type.includes('Comment')
+    );
 
-      features[features.length - 1] = features[features.length - 3];
-      features[features.length - 3] = tempFeature;
-    }
-
-    return features;
+    return [...otherFeatures, ...commentFeatures];
   };
 
   getChildren = async (model) => {
-      let children = [];
+    let children = [];
 
-      // if SOAP Devos or just Devos
-      // flip child ordering.
+    // if SOAP Devos or just Devos
+    // flip child ordering.
 
-      const category = await model.getContentItemCategory()
-      if (category.originId === '48' || category.originId === '53') {
-        children = await model.getChildren({
-          order: [// Sequelize doesn't support sorting on the join table any other way.
-          [Sequelize.literal('"contentItemsConnection".order'), 'ASC'], ['publishAt', 'DESC']],
-        });
-      } else {
-        children = await super.getChildren(model)
-      }
+    const category = await model.getContentItemCategory();
+    if (category.originId === '48' || category.originId === '53') {
+      children = await model.getChildren({
+        order: [
+          // Sequelize doesn't support sorting on the join table any other way.
+          [Sequelize.literal('"contentItemsConnection".order'), 'ASC'],
+          ['publishAt', 'DESC'],
+        ],
+      });
+    } else {
+      children = await super.getChildren(model);
+    }
 
     const filteredChildren = children.filter(
       (child) =>
