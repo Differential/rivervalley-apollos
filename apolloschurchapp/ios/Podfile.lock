@@ -303,7 +303,7 @@ PODS:
   - react-native-amplitude-analytics (0.2.12):
     - Amplitude-iOS (~> 4.3.1)
     - React
-  - react-native-apollos-player (2.41.0):
+  - react-native-apollos-player (2.47.9):
     - React
   - react-native-config (0.11.7):
     - React
@@ -701,7 +701,7 @@ SPEC CHECKSUMS:
   BugsnagReactNative: a96bc039e0e4ec317a8b331714393d836ca60557
   BVLinearGradient: e3aad03778a456d77928f594a649e96995f1c872
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  DoubleConversion: 831926d9b8bf8166fd87886c4abab286c2422662
+  DoubleConversion: cde416483dac037923206447da6e1454df403714
   FBLazyVector: 500821d196c3d1bd10e7e828bc93ce075234080f
   FBReactNativeSpec: 74c869e2cffa2ffec685cd1bac6788c021da6005
   Flipper: 30e8eeeed6abdc98edaf32af0cda2f198be4b733
@@ -714,7 +714,7 @@ SPEC CHECKSUMS:
   Flipper-RSocket: d9d9ade67cbecf6ac10730304bf5607266dd2541
   FlipperKit: d8d346844eca5d9120c17d441a2f38596e8ed2b9
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
-  glog: 5337263514dd6f09803962437687240c5dc39aa4
+  glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
   hermes-engine: bf7577d12ac6ccf53ab8b5af3c6ccf0dd8458c5c
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OneSignalXCFramework: 10648e60ff3d335fbffa62d9b44b700b56d49b51
@@ -735,7 +735,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 8c0517dee5e8c70cd6c3066f20213ff7ce54f176
   React-logger: bfddd3418dc1d45b77b822958f3e31422e2c179b
   react-native-amplitude-analytics: b3f6d615c005d22532cdf95701eb6e6b2c454ab2
-  react-native-apollos-player: 4ddfa7a5acdd5b5d1015d63c0724a033dfea7166
+  react-native-apollos-player: 8251b8cf7ff2200f504c609b5e296df9745ea12a
   react-native-config: 55548054279d92e0e4566ea15a8b9b81028ec342
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
   react-native-geolocation-service: 7c9436da6dfdecd9526c62eac62ea2bc3f0cc8ea
