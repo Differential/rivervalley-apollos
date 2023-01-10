@@ -3,10 +3,12 @@ import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
 import { ModalCloseButton, ModalBackButton } from '@apollosproject/ui-kit';
 import ContentSingle from './ContentSingle';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 const { Screen, Navigator } = createNativeStackNavigator();
 
 const ContentSingleNavigator = ({ route, navigation, ...props }) => (
+  <BottomSheetModalProvider>
   <Navigator
     {...props}
     headerMode="float"
@@ -26,6 +28,7 @@ const ContentSingleNavigator = ({ route, navigation, ...props }) => (
       initialParams={route.params}
     />
   </Navigator>
+  </BottomSheetModalProvider>
 );
 
 ContentSingleNavigator.propTypes = {

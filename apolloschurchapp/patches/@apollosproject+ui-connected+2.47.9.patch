@@ -1,0 +1,22 @@
+diff --git a/node_modules/@apollosproject/ui-connected/src/NodeSingleConnected/index.js b/node_modules/@apollosproject/ui-connected/src/NodeSingleConnected/index.js
+index 2a30187..393d4b7 100644
+--- a/node_modules/@apollosproject/ui-connected/src/NodeSingleConnected/index.js
++++ b/node_modules/@apollosproject/ui-connected/src/NodeSingleConnected/index.js
+@@ -82,7 +82,7 @@ const NodeSingleConnectedWithMedia = ({
+   Component,
+   ...props
+ }) => {
+-  const { data } = useQuery(GET_MEDIA, {
++  const { data, loading } = useQuery(GET_MEDIA, {
+     variables: { nodeId },
+     fetchPolicy: 'cache-and-network',
+   });
+@@ -138,6 +138,8 @@ const NodeSingleConnectedWithMedia = ({
+     return null;
+   }, [data, hasLivestream, hasVideo, hasAudio, hasResiLivestream]);
+ 
++  if (loading) return null;
++
+   if (!mediaSource)
+     return (
+       <NodeSingleConnected nodeId={nodeId} Component={Component} {...props}>
