@@ -102,7 +102,7 @@ apolloServer.applyMiddleware({ app, path: '/' });
       );
       console.log('\x1b[31m', '██████████████████████████████████', '\x1b[0m');
     } else {
-      console.log("No pending migrations")
+      console.log('No pending migrations');
     }
     if (ApollosConfig.AUTO_MIGRATE) await migrationRunner.up();
   }
