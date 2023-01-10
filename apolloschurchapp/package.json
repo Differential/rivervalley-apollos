@@ -56,7 +56,7 @@
     "@apollosproject/ui-prayer": "^2.47.9",
     "@apollosproject/ui-scripture": "^2.47.9",
     "@apollosproject/ui-test-utils": "^2.47.9",
-    "@bugsnag/react-native": "^7.9.6",
+    "@bugsnag/react-native": "^7.18.2",
     "@expo/react-native-action-sheet": "^3.13.0",
     "@gorhom/bottom-sheet": "3.4.1",
     "@react-native-community/async-storage": "^1.5.1",
