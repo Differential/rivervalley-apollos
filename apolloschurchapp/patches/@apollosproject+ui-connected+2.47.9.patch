@@ -1,5 +1,17 @@
+diff --git a/node_modules/@apollosproject/ui-connected/src/ContentFeedConnected/getContentFeed.js b/node_modules/@apollosproject/ui-connected/src/ContentFeedConnected/getContentFeed.js
+index a9867f5..58ce7a8 100644
+--- a/node_modules/@apollosproject/ui-connected/src/ContentFeedConnected/getContentFeed.js
++++ b/node_modules/@apollosproject/ui-connected/src/ContentFeedConnected/getContentFeed.js
+@@ -4,6 +4,7 @@ import ApollosConfig from '@apollosproject/config';
+ export default gql`
+   query getContentFeed($itemId: ID!, $after: String, $first: Int) {
+     node(id: $itemId) {
++      id
+       ... on ContentChannel {
+         childContentItemsConnection(after: $after, first: $first) {
+           pageInfo {
 diff --git a/node_modules/@apollosproject/ui-connected/src/NodeSingleConnected/index.js b/node_modules/@apollosproject/ui-connected/src/NodeSingleConnected/index.js
-index 2a30187..393d4b7 100644
+index 2a30187..03e5d2b 100644
 --- a/node_modules/@apollosproject/ui-connected/src/NodeSingleConnected/index.js
 +++ b/node_modules/@apollosproject/ui-connected/src/NodeSingleConnected/index.js
 @@ -82,7 +82,7 @@ const NodeSingleConnectedWithMedia = ({
@@ -11,12 +23,16 @@ index 2a30187..393d4b7 100644
      variables: { nodeId },
      fetchPolicy: 'cache-and-network',
    });
-@@ -138,6 +138,8 @@ const NodeSingleConnectedWithMedia = ({
-     return null;
-   }, [data, hasLivestream, hasVideo, hasAudio, hasResiLivestream]);
+diff --git a/node_modules/@apollosproject/ui-connected/src/features/WebviewFeature.js b/node_modules/@apollosproject/ui-connected/src/features/WebviewFeature.js
+index df2e08c..3a822eb 100644
+--- a/node_modules/@apollosproject/ui-connected/src/features/WebviewFeature.js
++++ b/node_modules/@apollosproject/ui-connected/src/features/WebviewFeature.js
+@@ -58,7 +58,7 @@ const WebviewFeature = ({ url, title, linkText, height }) => (
+         </TouchableOpacity>
+       </StyledSideBySideView>
+     )}
+-    <StyledWebView source={{ uri: url }} />
++    <StyledWebView source={{ uri: url }} androidLayerType="software" />
+   </StyledCard>
+ );
  
-+  if (loading) return null;
-+
-   if (!mediaSource)
-     return (
-       <NodeSingleConnected nodeId={nodeId} Component={Component} {...props}>

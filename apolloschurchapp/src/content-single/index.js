@@ -7,10 +7,10 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 const { Screen, Navigator } = createNativeStackNavigator();
 
-const ContentSingleNavigator = ({ route, navigation, ...props }) => (
+const ContentSingleNavigator = ({ route }) => (
   <BottomSheetModalProvider>
   <Navigator
-    {...props}
+    
     headerMode="float"
     screenOptions={{
       headerTranslucent: true,
