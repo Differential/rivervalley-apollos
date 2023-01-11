@@ -155,7 +155,7 @@ android {
         applicationId "com.rivervalley.churchapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 306
+        versionCode 309
         versionName "6.1.4"
         ndk {
             abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
