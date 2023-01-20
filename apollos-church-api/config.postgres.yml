@@ -143,7 +143,7 @@ TABS:
             limit: 1           
     - subtitle: Next up in DiscipleU
       algorithms:
-        - type: DISCIPLEU_NEXT_UP
+        - type: CONTENT_FEED
           arguments:
             limit: 6
             channelIds:
