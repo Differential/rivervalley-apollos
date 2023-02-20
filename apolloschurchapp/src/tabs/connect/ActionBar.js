@@ -6,16 +6,14 @@ const Toolbar = () => (
     {(openUrl) => (
       <ActionBar>
         <ActionBarItem
-          onPress={() => openUrl('https://www.rivervalley.org/smallgroups/')}
+          onPress={() => openUrl('https://rivervalley.org/all-small-groups/')}
           icon="groups"
           label="Groups"
         />
         <ActionBarItem
-          onPress={() =>
-            openUrl('https://www.rivervalley.org/next-steps/serve/')
-          }
-          icon="like"
-          label="Serve"
+          onPress={() => openUrl('https://rock.rivervalley.org/myaccount')}
+          icon="user"
+          label="My Account"
         />
         <ActionBarItem
           onPress={() =>
