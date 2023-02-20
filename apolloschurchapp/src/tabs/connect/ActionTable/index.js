@@ -78,7 +78,7 @@ const ActionTable = () => (
             onPress={() => openUrl('https://rivervalley.org/serve-teams/')}
           >
             <Cell>
-              <CellText>Join a Serve Team:</CellText>
+              <CellText>Join a Serve Team</CellText>
               <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
