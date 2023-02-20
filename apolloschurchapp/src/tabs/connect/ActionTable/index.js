@@ -73,6 +73,26 @@ const ActionTable = () => (
               <CellIcon name="arrow-next" />
             </Cell>
           </Touchable>
+          <Divider />
+          <Touchable
+            onPress={() => openUrl('https://rivervalley.org/serve-teams/')}
+          >
+            <Cell>
+              <CellText>Join a Serve Team:</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
+          <Divider />
+          <Touchable
+            onPress={() =>
+              openUrl('https://myrock.rivervalley.org/ScheduleToolbox')
+            }
+          >
+            <Cell>
+              <CellText>View Serve Team schedule</CellText>
+              <CellIcon name="arrow-next" />
+            </Cell>
+          </Touchable>
         </TableView>
       </View>
     )}
