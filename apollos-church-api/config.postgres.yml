@@ -101,14 +101,6 @@ TABS:
             channelIds:
               - 6b05a1f6-13d9-439c-a963-6f5bba4f55f4
             limit: 1
-    - subtitle: YTH Devotional
-      type: VerticalCardList
-      algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - fc5e2398-4224-4ed6-b3dd-a13e4748b35a
-            limit: 1
     - subtitle: Daily Scripture
       algorithms:
         - type: CONTENT_FEED
@@ -117,6 +109,14 @@ TABS:
             channelIds:
               - 299478a2-2bb9-4a8c-8158-49aa6399d28f
       type: VerticalCardList
+    - subtitle: YTH Devotional
+      type: VerticalCardList
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - fc5e2398-4224-4ed6-b3dd-a13e4748b35a
+            limit: 1
     - subtitle: Easter at River Valley
       algorithms:
         - type: CONTENT_FEED
